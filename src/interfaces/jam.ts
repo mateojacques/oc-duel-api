@@ -31,3 +31,10 @@ export interface ICreateJamBody {
 export interface ICreateJam {
   body: ICreateJamBody;
 }
+
+export interface IListJams {
+  query: {
+    topic_id: number;
+    creator_id: string;
+  };
+}
