@@ -1,3 +1,5 @@
+import { IBodyWithUserInfo } from "./common";
+
 // Model
 export interface Jam {
   id: string;
@@ -19,7 +21,7 @@ export interface IGetJamById {
   params: { jamId: string };
 }
 
-export interface ICreateJamBody {
+export interface ICreateJamBody extends IBodyWithUserInfo {
   creator_id: string;
   topic_id: number;
   description: string;

@@ -1,9 +1,11 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import pool from "./config/db";
 import routes from "./routes";
+import config from "./config/config";
+
+const { PORT } = config;
 
 const app = express();
-const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
 

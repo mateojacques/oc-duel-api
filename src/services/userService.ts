@@ -12,6 +12,15 @@ export const findUserById = async (userId: string) => {
   return user;
 };
 
+export const findUserByEmail = async (email: string) => {
+  const result = await pool.query("SELECT * FROM users WHERE email = $1", [
+    email,
+  ]);
+  const user = result.rows[0];
+  if (!user) throwNoContentError("An user for the provided email does not exist.");
+  return user;
+};
+
 export const createNewUserInDB = async (values: ICreateUserBody) => {
   const {
     name,
